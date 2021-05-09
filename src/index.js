@@ -1,3 +1,4 @@
+const createEmployee = require("./utils/createEmployee");
 const getAnswers = require("./utils/getAnswers");
 
 const managersQuestions = [
@@ -25,7 +26,7 @@ const managersQuestions = [
 
 const init = async () => {
   const managersAnswers = await getAnswers(managersQuestions);
-  console.log(managersAnswers);
+  createEmployee();
 };
 
 init();
