@@ -1,3 +1,4 @@
+const addEmployees = require("./utils/addEmployees");
 const createEmployee = require("./utils/createEmployee");
 const getAnswers = require("./utils/getAnswers");
 
@@ -26,6 +27,8 @@ const managersQuestions = [
 
 const init = async () => {
   const managersAnswers = await getAnswers(managersQuestions);
+  managersAnswers.employeeRole = "Manager";
+  addEmployees(managersAnswers);
   createEmployee();
 };
 
