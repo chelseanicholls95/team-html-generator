@@ -24,7 +24,7 @@ describe("Engineer class", () => {
     expect(actual).toBe(expected);
   });
 
-  it("should return github when getOfficeNumber is called", () => {
+  it("should return github when getGithub is called", () => {
     const expected = engineerDetails.github;
     const engineer = new Engineer(engineerDetails);
     const actual = engineer.getGithub();
