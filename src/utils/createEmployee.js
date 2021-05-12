@@ -1,4 +1,3 @@
-const Employee = require("../../lib/Employee");
 const Engineer = require("../../lib/Engineer");
 const Intern = require("../../lib/Intern");
 
@@ -19,17 +18,27 @@ const createEmployee = async () => {
     {
       message: "What is the employee's name?",
       name: "employeeName",
-      default: "Name unknown",
+      validate: (employeeName) => employeeName !== "",
     },
     {
       message: "What is the employee's ID?",
       name: "employeeId",
-      default: "ID unknown",
+      validate: (employeeId) => employeeId !== "",
     },
     {
       message: "What is the employee's email?",
       name: "employeeEmail",
-      default: "Email unknown",
+      validate: (employeeEmail) => {
+        valid =
+          /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(
+            employeeEmail
+          );
+        if (employeeEmail !== "" && valid) {
+          return true;
+        } else {
+          console.log(" Please enter a valid email");
+        }
+      },
     },
   ];
 
@@ -41,8 +50,9 @@ const createEmployee = async () => {
     if (employeeRole === "Engineer") {
       const engineerQuestion = [
         {
-          message: "What is the employee's Github?",
+          message: "What is the employee's Github username?",
           name: "github",
+          validate: (github) => github !== "",
         },
       ];
 
@@ -59,6 +69,7 @@ const createEmployee = async () => {
         {
           message: "What is the employee's school?",
           name: "school",
+          validate: (school) => school !== "",
         },
       ];
 
