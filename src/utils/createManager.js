@@ -1,20 +1,22 @@
+const Manager = require("../../lib/Manager");
 const addEmployees = require("./addEmployees");
 const getAnswers = require("./getAnswers");
 
 const managerQuestions = [
   {
     message: "What is the manager's name?",
-    name: "managerName",
+    name: "employeeName",
   },
   {
     message: "What is the manager's ID?",
-    name: "managerId",
+    name: "employeeId",
   },
   {
     message: "What is the manager's email?",
-    name: "managerEmail",
+    name: "employeeEmail",
   },
   {
+    type: "number",
     message: "What is the office number?",
     name: "officeNumber",
   },
@@ -22,8 +24,8 @@ const managerQuestions = [
 
 const createManager = async () => {
   const managerAnswers = await getAnswers(managerQuestions);
-  managerAnswers.employeeRole = "Manager";
-  addEmployees(managerAnswers);
+  const manager = new Manager(managerAnswers);
+  addEmployees(manager);
 };
 
 module.exports = createManager;

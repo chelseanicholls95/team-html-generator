@@ -1,9 +1,7 @@
-const addEmployees = require("./utils/addEmployees");
-const createEmployee = require("./utils/createEmployee");
-const createManager = require("./utils/createManager");
 const getAnswers = require("./utils/getAnswers");
+const createTeam = require("./utils/createTeam");
 
-const initialQuestion = [
+const teamNameQuestion = [
   {
     message: "What is the name of your team?",
     name: "teamName",
@@ -11,9 +9,9 @@ const initialQuestion = [
 ];
 
 const init = async () => {
-  const initialAnswer = await getAnswers(initialQuestion);
-  await createManager();
-  await createEmployee();
+  const teamName = await getAnswers(teamNameQuestion);
+  const team = await createTeam();
+  console.log(team);
 };
 
 init();
