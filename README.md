@@ -2,6 +2,8 @@
 
 ## Description
 
+A node app that dynamically generates a HTML file for a team with individual cards for the details of each team member. Inquirer.js is used to prompt questions for the user to answer about their team. Based on what team member type is selected, a different set of questions will be asked. The answers are then dynamically rendered into the HTML. Jest was used to test the classes within the application.
+
 ## Table of Contents
 
 [Description](#description)  
@@ -14,11 +16,11 @@
 ## Technologies Used
 
 - HTML5
-- CSS
 - Bootstrap
 - JavaScript
 - Node.js
 - Inquirer.js
+- Jest
 
 ## Getting Started
 
