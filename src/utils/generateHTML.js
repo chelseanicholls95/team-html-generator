@@ -1,7 +1,7 @@
 const createManagerHTML = (each) => {
   const { employeeName, employeeId, employeeEmail, officeNumber } = each;
-  return `<div class="card text-white bg-secondary m-2" style="width: 18rem">
-  <div class="card-header">
+  return `<div class="card text-white border-info m-2" style="width: 18rem">
+  <div class="card-header bg-info">
     ${employeeName}
     <div><i class="fas fa-mug-hot"></i> Manager</div>
   </div>
@@ -19,8 +19,8 @@ const createManagerHTML = (each) => {
 
 const createEngineerHTML = (each) => {
   const { employeeName, employeeId, employeeEmail, github } = each;
-  return `<div class="card text-white bg-secondary m-2" style="width: 18rem">
-  <div class="card-header">
+  return `<div class="card text-white border-success m-2" style="width: 18rem">
+  <div class="card-header bg-success">
     ${employeeName}
     <div><i class="fas fa-glasses"></i> Engineer</div>
   </div>
@@ -42,8 +42,8 @@ const createEngineerHTML = (each) => {
 const createInternHTML = (each) => {
   const { employeeName, employeeId, employeeEmail, school } = each;
 
-  return `<div class="card text-white bg-secondary m-2" style="width: 18rem">
-  <div class="card-header">
+  return `<div class="card text-white border-danger m-2" style="width: 18rem">
+  <div class="card-header bg-danger">
     ${employeeName}
     <div><i class="fas fa-user-graduate"></i> Intern</div>
   </div>
