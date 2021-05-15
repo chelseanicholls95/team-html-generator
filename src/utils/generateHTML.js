@@ -94,7 +94,7 @@ const generateHTML = (teamName, team) => {
     </head>
     <body>
       <div>
-        <header class="p-4 text-center bg-secondary bg-gradient mb-4">
+        <header class="p-4 text-center text-white bg-dark bg-gradient mb-4">
           <h1>${teamName}</h1>
         </header>
         <div class="container d-flex justify-content-center">
