@@ -90,7 +90,7 @@ const generateHTML = (teamName, team) => {
         src="https://kit.fontawesome.com/9287fb9c3e.js"
         crossorigin="anonymous"
       ></script>
-      <title>Team</title>
+      <title>${teamName}</title>
     </head>
     <body>
       <div>
