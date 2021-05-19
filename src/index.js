@@ -12,9 +12,9 @@ const teamNameQuestion = [
 ];
 
 const init = async () => {
-  const teamNameAnswer = await getAnswers(teamNameQuestion);
+  const { teamName } = await getAnswers(teamNameQuestion);
   const team = await createTeam();
-  const generatedHTML = generateHTML(teamNameAnswer.teamName, team);
+  const generatedHTML = generateHTML(teamName, team);
   writeToFile(generatedHTML);
 };
 

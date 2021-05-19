@@ -5,9 +5,8 @@ const getAnswers = async (questions, moreQuestions) => {
 
   if (moreQuestions !== undefined) {
     const moreAnswers = await inquirer.prompt(moreQuestions);
-    const mergedAnswers = Object.assign(answers, moreAnswers);
 
-    return mergedAnswers;
+    return { ...answers, ...moreAnswers };
   }
 
   return answers;
