@@ -1,14 +1,14 @@
-const addEmployees = require("./addEmployees");
 const createManager = require("./createManager");
 const createEmployee = require("./createEmployee");
+const Team = require("../../lib/Team");
 
-const createTeam = async () => {
-  await createManager();
-  await createEmployee();
+const createTeam = async (teamName) => {
+  const team = new Team(teamName);
 
-  const employees = addEmployees();
+  await createManager(team);
+  await createEmployee(team);
 
-  return employees;
+  return team;
 };
 
 module.exports = createTeam;

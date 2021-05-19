@@ -13,8 +13,8 @@ const teamNameQuestion = [
 
 const init = async () => {
   const { teamName } = await getAnswers(teamNameQuestion);
-  const team = await createTeam();
-  const generatedHTML = generateHTML(teamName, team);
+  const team = await createTeam(teamName);
+  const generatedHTML = generateHTML(team);
   writeToFile(generatedHTML);
 };
 

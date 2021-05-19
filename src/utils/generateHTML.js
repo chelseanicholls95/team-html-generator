@@ -69,8 +69,8 @@ const checkEmployeesAndGenerateHTML = (each) => {
   }
 };
 
-const generateHTML = (teamName, team) => {
-  const employees = team.slice(0, -1).map(checkEmployeesAndGenerateHTML);
+const generateHTML = (team) => {
+  const employees = team.getEmployees().map(checkEmployeesAndGenerateHTML);
   const manager = employees[0];
   const teamMembers = employees.slice(1).join();
 
@@ -90,12 +90,12 @@ const generateHTML = (teamName, team) => {
         src="https://kit.fontawesome.com/9287fb9c3e.js"
         crossorigin="anonymous"
       ></script>
-      <title>${teamName}</title>
+      <title>${team.getName()}</title>
     </head>
     <body>
       <div>
         <header class="p-4 text-center text-white bg-dark bg-gradient mb-4">
-          <h1>${teamName}</h1>
+          <h1>${team.getName()}</h1>
         </header>
         <div class="container d-flex justify-content-center">
           ${manager}
