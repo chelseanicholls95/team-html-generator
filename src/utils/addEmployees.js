@@ -1,4 +1,4 @@
-let employees = [];
+const employees = [];
 
 const addEmployees = (employee) => {
   employees.push(employee);

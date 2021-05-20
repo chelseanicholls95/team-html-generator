@@ -1,10 +1,9 @@
 const Engineer = require("../../lib/Engineer");
 const Intern = require("../../lib/Intern");
 
-const addEmployees = require("./addEmployees");
 const getAnswers = require("./getAnswers");
 
-const createEmployee = async () => {
+const createEmployee = async (team) => {
   const selectEmployeeQuestion = [
     {
       type: "list",
@@ -63,7 +62,7 @@ const createEmployee = async () => {
 
       const engineer = new Engineer(engineerAnswers);
 
-      addEmployees(engineer);
+      team.addEmployee(engineer);
     } else if (employeeRole === "Intern") {
       const internQuestion = [
         {
@@ -77,7 +76,7 @@ const createEmployee = async () => {
 
       const intern = new Intern(internAnswers);
 
-      addEmployees(intern);
+      team.addEmployee(intern);
     } else {
       inProgress = false;
     }
